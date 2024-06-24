@@ -1,0 +1,32 @@
+{
+    "name": "eco-tracker/eco-tracker",
+    "description": "eco-tracker/eco-tracker",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "EcoTracker\\EcoTracker",
+        "label": {
+            "de-DE": "EcoTracker plugin",
+            "en-GB": "EcoTracker plugin"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tri Huynh"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EcoTracker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EcoTracker\\Tests\\": "tests/"
+        }
+    }
+}

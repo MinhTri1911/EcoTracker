@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish.html.twig' %}
+
+{% block page_checkout_finish_inner %}
+    {{ parent() }}
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'purchase',
+            'ecommerce': {
+                'transaction_id': '{{ page.order.orderNumber }}',
+                'affiliation': '{{ "Your Shop Name" }}',
+                'value': {{ page.order.amountTotal }},
+                'currency': '{{ page.order.currency.isoCode }}',
+                'tax': {{ page.order.amountTotalTax }},
+                'shipping': {{ page.order.shippingTotal }},
+                'items': [
+                    {% for lineItem in page.order.lineItems %}
+                    {
+                        'item_id': '{{ lineItem.id }}',
+                        'item_name': '{{ lineItem.label }}',
+                        'price': {{ lineItem.unitPrice }},
+                        'quantity': {{ lineItem.quantity }}
+                    }{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                ]
+            }
+        });
+    </script>
+{% endblock %}

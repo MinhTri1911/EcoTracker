@@ -1,0 +1,17 @@
+{% block scripts %}
+    {% block gtm_script %}
+        {% if gtmContainerId %}
+            <script async src="https://www.googletagmanager.com/gtm.js?id={{ gtmContainerId }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+            </script>
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id={{ gtmContainerId }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+        {% endif %}
+    {% endblock %}
+
+    {% block ga_script %}
+        {# Do something #}
+    {% endblock %}
+{% endblock %}

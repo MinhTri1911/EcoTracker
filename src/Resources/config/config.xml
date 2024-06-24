@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>EcoTracker Configuration</title>
+        <title lang="de-DE">EcoTracker-Konfiguration</title>
+
+        <input-field type="text">
+            <name>gaTrackingId</name>
+            <label>Google Analytics Tracking ID</label>
+            <label lang="de-DE">Google Analytics Tracking-ID</label>
+            <help-text>Enter your Google Analytics tracking ID (e.g., UA-XXXXX-Y).</help-text>
+            <help-text lang="de-DE">Geben Sie Ihre Google Analytics-Tracking-ID ein (z.B. UA-XXXXX-Y).</help-text>
+        </input-field>
+
+        <input-field type="text">
+            <name>gtmContainerId</name>
+            <label>Google Tag Manager Container ID</label>
+            <label lang="de-DE">Google Tag Manager Container-ID</label>
+            <help-text>Enter your Google Tag Manager container ID (e.g., GTM-XXXXX).</help-text>
+            <help-text lang="de-DE">Geben Sie Ihre Google Tag Manager-Container-ID ein (z.B. GTM-XXXXX).</help-text>
+        </input-field>
+
+        <input-field type="bool">
+            <name>trackPurchase</name>
+            <label>Track Purchase Event</label>
+            <label lang="de-DE">Kaufereignis verfolgen</label>
+            <help-text>Enable or disable tracking of purchase events.</help-text>
+            <help-text lang="de-DE">Aktivieren oder deaktivieren Sie das Tracking von Kaufereignissen.</help-text>
+        </input-field>
+
+        <input-field type="bool">
+            <name>trackAddToCart</name>
+            <label>Track Add to Cart Event</label>
+            <label lang="de-DE">Zum Warenkorb hinzufügen Ereignis verfolgen</label>
+            <help-text>Enable or disable tracking of add to cart events.</help-text>
+            <help-text lang="de-DE">Aktivieren oder deaktivieren Sie das Tracking von Ereignissen zum Warenkorb hinzufügen.</help-text>
+        </input-field>
+
+        <input-field type="bool">
+            <name>trackProductConfigurationChanged</name>
+            <label>Track Product Configuration Changed Event</label>
+            <label lang="de-DE">Produktkonfiguration geändert Ereignis verfolgen</label>
+            <help-text>Enable or disable tracking of product configuration changed events.</help-text>
+            <help-text lang="de-DE">Aktivieren oder deaktivieren Sie das Tracking von Ereignissen zur Änderung der Produktkonfiguration.</help-text>
+        </input-field>
+    </card>
+
+</config>

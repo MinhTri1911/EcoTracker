@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/meta.html.twig' %}
+
+{% block layout_head_canonical %}
+    {{ parent() }}
+
+    <script>
+        // Add JavaScript to track product configuration changes
+        // You can customize the logic here to detect when a product configuration changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const configOptions = document.querySelectorAll('.product-detail-configurator-option-input');
+            configOptions.forEach(function(option) {
+                option.addEventListener('change', function() {
+                    const configValue = option.value;
+                    const configOption = option.name;
+                    window.dataLayer.push({
+                        'event': 'product_configuration_changed',
+                        'ecommerce': {
+                            'items': [
+                                {
+                                    'item_id': '{{ page.product.id }}',
+                                    'item_name': '{{ page.product.translated.name }}',
+                                    'price': {{ page.product.price.first.gross }},
+                                    'configuration_option': configOption,
+                                    'configuration_value': configValue
+                                }
+                            ]
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+{% endblock %}

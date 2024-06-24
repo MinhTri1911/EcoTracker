@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
+
+{% block layout_header %}
+    {{ parent() }}
+
+    {% include '@EcoTracker/storefront/layout/header/gtm.html.twig' %}
+{% endblock %}
